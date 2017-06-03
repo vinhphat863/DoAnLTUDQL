@@ -22,5 +22,75 @@ namespace DoAn_LTQLUD
         {
             var fluent = mvvmContext1.OfType<MainViewModel>();
         }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            formKhuVuc frm = new formKhuVuc();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhaCungCap frm = new frmNhaCungCap();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKhoHang frm = new frmKhoHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDonViTinh frm = new frmDonViTinh();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhomHang frm = new frmNhomHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmHangHoa frm = new frmHangHoa();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmTyGia frm = new frmTyGia();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBoPhan frm = new frmBoPhan();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhanVien frm = new frmNhanVien();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
