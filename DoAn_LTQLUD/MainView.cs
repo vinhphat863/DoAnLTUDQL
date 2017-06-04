@@ -92,5 +92,12 @@ namespace DoAn_LTQLUD
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMuaHang frm = new frmMuaHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
