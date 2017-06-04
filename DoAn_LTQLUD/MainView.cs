@@ -92,5 +92,26 @@ namespace DoAn_LTQLUD
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MainView frm = new MainView();
+            this.Close();
+            frm.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            formPhanQuyen frm = new formPhanQuyen();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmNhatKyHeThong frm = new frmNhatKyHeThong();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

@@ -62,6 +62,18 @@
     <Compile Include="formKhuVuc.Designer.cs">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPhanQuyen.Designer.cs">
+      <DependentUpon>formPhanQuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBoPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhatKyHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhatKyHeThong.Designer.cs">
+      <DependentUpon>frmNhatKyHeThong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhomHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +146,12 @@
     <EmbeddedResource Include="formKhuVuc.resx">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPhanQuyen.resx">
+      <DependentUpon>formPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhatKyHeThong.resx">
+      <DependentUpon>frmNhatKyHeThong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhomHang.resx">
       <DependentUpon>frmNhomHang.cs</DependentUpon>
