@@ -17,10 +17,6 @@ namespace DoAn_LTQLUD
         {
             InitializeComponent();
         }
-
-        private void gridControl2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
