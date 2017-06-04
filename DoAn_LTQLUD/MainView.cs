@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -119,5 +120,34 @@ namespace DoAn_LTQLUD
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmLienHe frm = new frmLienHe();
+            frm.Show();
+        }
+
+        private void barButtonItem37_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmThongTin frm = new frmThongTin();
+            frm.Show();
+        }
+
+        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Process tv = new Process();
+            tv.StartInfo.FileName = @"C:\Program Files (x86)\TeamViewer\TeamViewer.exe";
+            //tv.StartInfo.Arguments = "ProcessStart.cs"; // if you need some
+            tv.Start();
+        }
+
+        private void barButtonItem34_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://perfect.com.vn/huong-dan-su-dung-phan-mem-quan-ly-ban-hang.html");
+        }
+
+        private void barButtonItem39_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=wBcm3q5-NdA");}
     }
 }
