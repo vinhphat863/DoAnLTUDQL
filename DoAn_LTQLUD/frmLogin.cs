@@ -43,11 +43,9 @@ namespace DoAn_LTQLUD
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
-            {
-                Close();
-            }
+            frmLogin frm = new frmLogin();
+            this.Close();
+            frm.Show();
         }
     }
 }
