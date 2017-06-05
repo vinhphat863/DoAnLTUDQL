@@ -29,7 +29,7 @@ namespace POS.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=PHAT-PC\SQLEXPRESS;Initial Catalog=PerfectApp;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-6RMHFM3;Initial Catalog=PerfectApp;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter)
         {
