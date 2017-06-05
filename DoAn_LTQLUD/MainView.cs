@@ -149,5 +149,34 @@ namespace DoAn_LTQLUD
         private void barButtonItem39_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=wBcm3q5-NdA");}
+
+        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBanHang frm = new frmBanHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmTonKho frm = new frmTonKho();
+            frm.MdiParent = this;
+            frm.Show();
+
+        }
+
+        private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmChuyenKho frm = new frmChuyenKho();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSoDuDauKy frm = new frmSoDuDauKy();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

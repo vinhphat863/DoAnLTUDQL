@@ -26,10 +26,9 @@ namespace DoAn_LTQLUD
             if (Login(userName, passWord))
             {
                 MainView w1 = new MainView();
-                w1.Owner = this;
                 this.Hide();
                 w1.ShowDialog();
-                this.Show();
+                this.Close();
             }
             else
             {
