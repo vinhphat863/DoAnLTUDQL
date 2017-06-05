@@ -57,17 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="formKhuVuc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formKhuVuc.Designer.cs">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="formLogin.Designer.cs">
-      <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="formPhanQuyen.cs">
       <SubType>Form</SubType>
@@ -110,6 +106,12 @@
     </Compile>
     <Compile Include="frmLienHe.Designer.cs">
       <DependentUpon>frmLienHe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMuaHang.cs">
       <SubType>Form</SubType>
@@ -160,13 +162,15 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="PerfectAppDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formKhuVuc.resx">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formLogin.resx">
-      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formPhanQuyen.resx">
       <DependentUpon>formPhanQuyen.cs</DependentUpon>
@@ -188,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLienHe.resx">
       <DependentUpon>frmLienHe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMuaHang.resx">
       <DependentUpon>frmMuaHang.cs</DependentUpon>
@@ -223,6 +230,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PerfectAppDataSet1.xsc">
+      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PerfectAppDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PerfectAppDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PerfectAppDataSet1.xss">
+      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
