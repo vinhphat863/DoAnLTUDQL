@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5198da07a4a4382a8ac957d5ec2fce9" Name="Diagram1">
+        <EntityTypeShape EntityType="PerfectAppModel.BoPhanNhanVien" Width="1.5" PointX="1.5" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.DonViTinh" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.HangHoa" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.KhachHang" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.KhoHang" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.KhuVuc" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.MaVach" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.NhaCungCap" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.NhanVien" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.NhomHang" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.TyGia" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.UserID" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PerfectAppModel.VaiTro" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PerfectAppModel.FK_NhanVien_BoPhanNhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_DonViTinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_MaVach_DonViTinh" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_KhoHang" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_NhomHang" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_MaVach_HangHoa" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_KhachHang_KhuVuc" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_KhoHang_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PerfectAppModel.FK_NhaCungCap_KhuVuc" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

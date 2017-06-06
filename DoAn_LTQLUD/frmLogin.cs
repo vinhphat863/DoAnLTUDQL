@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DoAn_LTQLUD.DAO;
+using DoAn_LTQLUD.BUS;
 
 namespace DoAn_LTQLUD
 {
@@ -23,28 +23,42 @@ namespace DoAn_LTQLUD
         {
             string userName = txb_username.Text;
             string passWord = txb_password.Text;
-            if (Login(userName, passWord))
+            if (UserBUS.CheckTaiKhoan(userName,passWord) == true)
             {
-                MainView w1 = new MainView();
+                MainView frm = new MainView();
                 this.Hide();
-                w1.ShowDialog();
+                frm.ShowDialog();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Password Sai Bét");
+                MessageBox.Show("Tài Khoản Không Đúng Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-        bool Login(string userName, string passWord)
-        {
-            return AccountDAO.Instance.Login(userName, passWord);
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
-            frmLogin frm = new frmLogin();
             this.Close();
-            frm.Show();
+        }
+
+        private void txb_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Return)
+            {
+                string userName = txb_username.Text;
+                string passWord = txb_password.Text;
+                if (UserBUS.CheckTaiKhoan(userName, passWord) == true)
+                {
+                    MainView frm = new MainView();
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Tài Khoản Không Đúng Vui Lòng Kiểm Tra Lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

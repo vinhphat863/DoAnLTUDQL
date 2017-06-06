@@ -45,8 +45,19 @@
     <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,8 +68,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="BoPhanNhanVien.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BUS\UserBUS.cs" />
+    <Compile Include="DonViTinh.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="formKhuVuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +195,18 @@
     <Compile Include="frmTyGia.Designer.cs">
       <DependentUpon>frmTyGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangHoa.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhoHang.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,13 +214,44 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="PerfectAppDataSet1.Designer.cs">
+    <Compile Include="MaVach.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhomHang.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PerfectAppModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
+      <DependentUpon>PerfectAppModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PerfectAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PerfectAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TyGia.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserID.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VaiTro.cs">
+      <DependentUpon>PerfectAppModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="formKhuVuc.resx">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,16 +325,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="PerfectAppDataSet1.xsc">
-      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PerfectAppDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PerfectAppDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PerfectAppDataSet1.xss">
-      <DependentUpon>PerfectAppDataSet1.xsd</DependentUpon>
+    <EntityDeploy Include="PerfectAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PerfectAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="PerfectAppModel.edmx.diagram">
+      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -287,6 +344,22 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="PerfectAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
+      <LastGenOutput>PerfectAppModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PerfectAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
+      <LastGenOutput>PerfectAppModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

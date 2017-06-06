@@ -64,8 +64,10 @@
             // 
             this.txb_password.Location = new System.Drawing.Point(118, 107);
             this.txb_password.Name = "txb_password";
+            this.txb_password.PasswordChar = '*';
             this.txb_password.Size = new System.Drawing.Size(100, 21);
             this.txb_password.TabIndex = 3;
+            this.txb_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_password_KeyDown);
             // 
             // labelControl3
             // 
