@@ -18,6 +18,7 @@ namespace DoAn_LTQLUD
         public NhaCungCap()
         {
             this.HangHoas = new HashSet<HangHoa>();
+            this.PhieuNhapHangs = new HashSet<PhieuNhapHang>();
         }
     
         public string MaNCC { get; set; }
@@ -42,5 +43,7 @@ namespace DoAn_LTQLUD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HangHoa> HangHoas { get; set; }
         public virtual KhuVuc KhuVuc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuNhapHang> PhieuNhapHangs { get; set; }
     }
 }

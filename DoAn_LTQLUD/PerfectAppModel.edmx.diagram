@@ -28,6 +28,23 @@
         <AssociationConnector Association="PerfectAppModel.FK_KhachHang_KhuVuc" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_KhoHang_NhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_NhaCungCap_KhuVuc" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PerfectAppModel.DieuKhoanThanhToan" Width="1.5" PointX="3" PointY="30.5" />
+        <EntityTypeShape EntityType="PerfectAppModel.HinhThucThanhToan" Width="1.5" PointX="3" PointY="33.875" />
+        <EntityTypeShape EntityType="PerfectAppModel.PhanLoaiHangHoa" Width="1.5" PointX="3" PointY="27.875" />
+        <EntityTypeShape EntityType="PerfectAppModel.PhieuNhapHang" Width="1.5" PointX="5.25" PointY="13.25" />
+        <EntityTypeShape EntityType="PerfectAppModel.PhieuTemp" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="PerfectAppModel.sysdiagram" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_DieuKhoanThanhToan" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_NhomHang1" />
+        <AssociationConnector Association="PerfectAppModel.FK_HangHoa_PhanLoaiHangHoa" />
+        <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_HinhThucThanhToan" />
+        <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_KhoHang" />
+        <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap" />
+        <AssociationConnector Association="PerfectAppModel.FK_NhanVien_NhanVien" />
+        <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_NhanVien" />
+        <EntityTypeShape EntityType="PerfectAppModel.ChiTietPhieuNhapHang" Width="1.5" PointX="7.5" PointY="12.125" />
+        <AssociationConnector Association="PerfectAppModel.FK_ChiTietPhieuNhapHang_HangHoa" />
+        <AssociationConnector Association="PerfectAppModel.FK_ChiTietPhieuNhapHang_PhieuNhapHang" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

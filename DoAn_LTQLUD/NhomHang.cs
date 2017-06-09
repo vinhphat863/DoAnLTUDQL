@@ -18,6 +18,7 @@ namespace DoAn_LTQLUD
         public NhomHang()
         {
             this.HangHoas = new HashSet<HangHoa>();
+            this.HangHoas1 = new HashSet<HangHoa>();
         }
     
         public string MaNHH { get; set; }
@@ -27,5 +28,7 @@ namespace DoAn_LTQLUD
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HangHoa> HangHoas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HangHoa> HangHoas1 { get; set; }
     }
 }

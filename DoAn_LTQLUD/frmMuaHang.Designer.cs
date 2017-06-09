@@ -47,7 +47,15 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.phieuTempsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaPhieu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaDonVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
@@ -91,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuTempsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -307,6 +316,7 @@
             // 
             // gridControl2
             // 
+            this.gridControl2.DataSource = this.phieuTempsBindingSource;
             this.gridControl2.Location = new System.Drawing.Point(12, 132);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -315,10 +325,73 @@
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
+            // phieuTempsBindingSource
+            // 
+            this.phieuTempsBindingSource.DataSource = typeof(DoAn_LTQLUD.PhieuTemp);
+            // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaPhieu,
+            this.colMaHang,
+            this.colTenHang,
+            this.colMaDonVi,
+            this.colSoLuong,
+            this.colDonGia,
+            this.colGhiChu});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
+            this.gridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            // 
+            // colMaPhieu
+            // 
+            this.colMaPhieu.FieldName = "MaPhieu";
+            this.colMaPhieu.Name = "colMaPhieu";
+            this.colMaPhieu.Visible = true;
+            this.colMaPhieu.VisibleIndex = 0;
+            // 
+            // colMaHang
+            // 
+            this.colMaHang.FieldName = "MaHang";
+            this.colMaHang.Name = "colMaHang";
+            this.colMaHang.Visible = true;
+            this.colMaHang.VisibleIndex = 1;
+            // 
+            // colTenHang
+            // 
+            this.colTenHang.FieldName = "TenHang";
+            this.colTenHang.Name = "colTenHang";
+            this.colTenHang.Visible = true;
+            this.colTenHang.VisibleIndex = 2;
+            // 
+            // colMaDonVi
+            // 
+            this.colMaDonVi.FieldName = "MaDonVi";
+            this.colMaDonVi.Name = "colMaDonVi";
+            this.colMaDonVi.Visible = true;
+            this.colMaDonVi.VisibleIndex = 3;
+            // 
+            // colSoLuong
+            // 
+            this.colSoLuong.FieldName = "SoLuong";
+            this.colSoLuong.Name = "colSoLuong";
+            this.colSoLuong.Visible = true;
+            this.colSoLuong.VisibleIndex = 4;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.FieldName = "DonGia";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Visible = true;
+            this.colDonGia.VisibleIndex = 5;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.FieldName = "GhiChu";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.Visible = true;
+            this.colGhiChu.VisibleIndex = 6;
             // 
             // textEdit3
             // 
@@ -657,6 +730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phieuTempsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
@@ -750,5 +824,13 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private System.Windows.Forms.BindingSource phieuTempsBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaPhieu;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaHang;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenHang;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaDonVi;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn colDonGia;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
     }
 }

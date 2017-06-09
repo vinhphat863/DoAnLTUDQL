@@ -12,30 +12,17 @@ namespace DoAn_LTQLUD
     using System;
     using System.Collections.Generic;
     
-    public partial class KhoHang
+    public partial class HinhThucThanhToan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KhoHang()
+        public HinhThucThanhToan()
         {
-            this.HangHoas = new HashSet<HangHoa>();
             this.PhieuNhapHangs = new HashSet<PhieuNhapHang>();
         }
     
-        public string MaKho { get; set; }
-        public string Ten { get; set; }
-        public string KyHieu { get; set; }
-        public string NguoiQuanLy { get; set; }
-        public string NguoiLienHe { get; set; }
-        public string DiaChi { get; set; }
-        public Nullable<int> DienThoai { get; set; }
-        public Nullable<int> Fax { get; set; }
-        public string Email { get; set; }
-        public string DienGia { get; set; }
-        public Nullable<int> ConQuanLy { get; set; }
+        public string MaHTTT { get; set; }
+        public string TenHTTT { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HangHoa> HangHoas { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuNhapHang> PhieuNhapHangs { get; set; }
     }
