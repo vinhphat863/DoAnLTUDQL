@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn_LTQLUD.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,7 @@ namespace DoAn_LTQLUD.BUS
     {
         public static bool CheckTaiKhoan(string username, string password)
         {
-            bool kq = false;
-            var db = new PerfectAppEntities();
-            var user = db.UserIDs.FirstOrDefault(u => u.username == username && u.password == password);
-            if(user != null)
-            {
-                kq = true;
-            }
-            return kq;
+            return UserDAO.CheckTaiKhoan(username,password);
         }
     }
 }

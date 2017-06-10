@@ -76,10 +76,12 @@
     </Compile>
     <Compile Include="BUS\KhuVucBUS.cs" />
     <Compile Include="BUS\UserBUS.cs" />
-    <Compile Include="BUS\XuLyChuoi.cs" />
     <Compile Include="ChiTietPhieuNhapHang.cs">
       <DependentUpon>PerfectAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\KhuVucDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\XuLyChuoi.cs" />
     <Compile Include="DieuKhoanThanhToan.cs">
       <DependentUpon>PerfectAppModel.tt</DependentUpon>
     </Compile>
@@ -187,6 +189,12 @@
     </Compile>
     <Compile Include="frmSoDuDauKy.Designer.cs">
       <DependentUpon>frmSoDuDauKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuaKhuVuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaKhuVuc.Designer.cs">
+      <DependentUpon>frmSuaKhuVuc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemKhuVuccs.cs">
       <SubType>Form</SubType>
@@ -340,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSoDuDauKy.resx">
       <DependentUpon>frmSoDuDauKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaKhuVuc.resx">
+      <DependentUpon>frmSuaKhuVuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemKhuVuccs.resx">
       <DependentUpon>frmThemKhuVuccs.cs</DependentUpon>

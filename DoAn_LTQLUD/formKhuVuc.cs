@@ -30,5 +30,18 @@ namespace DoAn_LTQLUD
             frmThem.ShowDialog();
             gridControl1.DataSource = KhuVucBUS.DanhSach();
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            string ghichu = "";
+            int vitri = gridView1.GetFocusedDataSourceRowIndex();
+            string ma = gridView1.GetRowCellValue(vitri, "MaKhuVuc").ToString();
+            string ten = gridView1.GetRowCellValue(vitri, "TenKhuVuc").ToString();
+            if(!string.IsNullOrEmpty(gridView1.GetRowCellValue(vitri, "GhiChu").ToString())){
+                ghichu = gridView1.GetRowCellValue(vitri, "GhiChu").ToString();
+            }
+            frmSuaKhuVuc frm = new frmSuaKhuVuc();
+            frm.ShowDialog();
+        }
     }
 }

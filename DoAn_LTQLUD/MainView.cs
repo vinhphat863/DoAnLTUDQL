@@ -31,6 +31,11 @@ namespace DoAn_LTQLUD
             frm.Show();
         }
 
+        private void Frm_click(string MaKhuVuc, string TenKhuVuc, string GhiChu)
+        {
+            
+        }
+
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmKhachHang frm = new frmKhachHang();

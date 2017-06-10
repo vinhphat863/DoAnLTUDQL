@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoAn_LTQLUD.BUS
+namespace DoAn_LTQLUD.DAO
 {
     class XuLyChuoi
     {
@@ -14,9 +14,9 @@ namespace DoAn_LTQLUD.BUS
             string KyHieu;
             string temp;
             int SoMoi;
-            int vitri = Ma.IndexOf("V") + 1;
-            KyHieu = Ma.Substring(0, vitri);
-            temp = Ma.Substring(vitri, 4);
+            int vitri = Ma.Length - 5;
+            KyHieu = Ma.Substring(0, Ma.Length - 4);
+            temp = Ma.Substring(vitri + 1, 4);
             int.TryParse(temp, out SoMoi);
             SoMoi = SoMoi + 1;
             if (SoMoi < 10)
@@ -27,9 +27,13 @@ namespace DoAn_LTQLUD.BUS
             {
                 kq = KyHieu + "00" + SoMoi;
             }
-            if (SoMoi >= 100 && SoMoi <= 1000)
+            if (SoMoi >= 100 && SoMoi < 1000)
             {
-                kq = KyHieu + "000" + SoMoi;
+                kq = KyHieu + "0" + SoMoi;
+            }
+            if(SoMoi >= 1000 && SoMoi < 9999)
+            {
+                kq = KyHieu + SoMoi;
             }
             return kq;
         }
