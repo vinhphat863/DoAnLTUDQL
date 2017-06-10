@@ -36,5 +36,20 @@ namespace DoAn_LTQLUD.DAO
             db.KhuVucs.Add(kv);
             db.SaveChanges();
         }
+        public static void Sua(string Ma,string Ten,string GhiChu)
+        {
+            var db = new PerfectAppEntities();
+            var rs = db.KhuVucs.Where(k => k.MaKhuVuc == Ma).First();
+            rs.TenKhuVuc = Ten;
+            rs.GhiChu = GhiChu;
+            db.SaveChanges();
+        }
+        public static void Xoa(string Ma)
+        {
+            var db = new PerfectAppEntities();
+            var rs = db.KhuVucs.Where(k => k.MaKhuVuc == Ma).First();
+            db.KhuVucs.Remove(rs);
+            db.SaveChanges();
+        }
     }
 }

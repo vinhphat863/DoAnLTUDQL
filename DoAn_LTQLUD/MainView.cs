@@ -23,22 +23,36 @@ namespace DoAn_LTQLUD
         {
             var fluent = mvvmContext1.OfType<MainViewModel>();
         }
-
+        private bool checkactiveform(Form frm)
+        {
+            foreach(var childfrm in MdiChildren)
+            {
+                if(childfrm.Name == frm.Name)
+                {
+                    childfrm.Activate();
+                    return true;
+                }
+            }
+            return false;
+        }
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formKhuVuc frm = new formKhuVuc();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
-        }
-
-        private void Frm_click(string MaKhuVuc, string TenKhuVuc, string GhiChu)
-        {
-            
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmKhachHang frm = new frmKhachHang();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -46,6 +60,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNhaCungCap frm = new frmNhaCungCap();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -53,6 +71,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmKhoHang frm = new frmKhoHang();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -60,6 +82,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDonViTinh frm = new frmDonViTinh();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -67,6 +93,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNhomHang frm = new frmNhomHang();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -74,6 +104,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmHangHoa frm = new frmHangHoa();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -88,6 +122,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmBoPhan frm = new frmBoPhan();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -95,6 +133,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNhanVien frm = new frmNhanVien();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -102,6 +144,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmMuaHang frm = new frmMuaHang();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -115,6 +161,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             formPhanQuyen frm = new formPhanQuyen();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -122,6 +172,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNhatKyHeThong frm = new frmNhatKyHeThong();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -129,12 +183,20 @@ namespace DoAn_LTQLUD
         private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmLienHe frm = new frmLienHe();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.Show();
         }
 
         private void barButtonItem37_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmThongTin frm = new frmThongTin();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.Show();
         }
 
@@ -158,6 +220,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmBanHang frm = new frmBanHang();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -165,6 +231,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmTonKho frm = new frmTonKho();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
 
@@ -173,6 +243,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem26_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmChuyenKho frm = new frmChuyenKho();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }
@@ -180,6 +254,10 @@ namespace DoAn_LTQLUD
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmSoDuDauKy frm = new frmSoDuDauKy();
+            if (checkactiveform(frm))
+            {
+                return;
+            }
             frm.MdiParent = this;
             frm.Show();
         }

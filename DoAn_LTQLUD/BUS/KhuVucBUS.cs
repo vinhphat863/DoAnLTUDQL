@@ -21,5 +21,13 @@ namespace DoAn_LTQLUD.BUS
         {
             KhuVucDAO.Them(Ma,Ten,GhiChu);
         }
+        public static void Sua(string Ma,string Ten,string GhiChu)
+        {
+            KhuVucDAO.Sua(Ma, Ten, GhiChu);
+        }
+        public static void Xoa(string Ma)
+        {
+            KhuVucDAO.Xoa(Ma);
+        }
     }
 }
