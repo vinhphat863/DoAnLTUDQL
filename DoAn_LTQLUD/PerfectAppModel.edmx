@@ -117,6 +117,7 @@
           <Property Name="MaKhuVuc" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TenKhuVuc" Type="nvarchar" MaxLength="50" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConQuanLy" Type="int" />
         </EntityType>
         <EntityType Name="MaVach">
           <Key>
@@ -138,13 +139,13 @@
           <Property Name="TenNCC" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="MaSoThue" Type="int" />
-          <Property Name="DienThoai" Type="int" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="11" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" />
           <Property Name="GioiHanNo" Type="int" />
           <Property Name="ChietKhau" Type="int" />
           <Property Name="Fax" Type="int" />
-          <Property Name="Mobile" Type="int" />
+          <Property Name="Mobile" Type="varchar" MaxLength="11" />
           <Property Name="Website" Type="varchar" MaxLength="50" />
           <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
           <Property Name="NoHienTai" Type="int" />
@@ -163,8 +164,8 @@
           <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="DienThoai" Type="int" />
-          <Property Name="DiDong" Type="int" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="11" />
+          <Property Name="DiDong" Type="varchar" MaxLength="11" />
           <Property Name="ConQuanLy" Type="int" />
         </EntityType>
         <EntityType Name="NhomHang">
@@ -208,7 +209,7 @@
           <Property Name="MaPhieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaHang" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TenHang" Type="nvarchar" MaxLength="50" />
-          <Property Name="MaDonVi" Type="varchar" MaxLength="50" />
+          <Property Name="TenDonVi" Type="nvarchar" MaxLength="50" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="float" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
@@ -601,7 +602,7 @@
           <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ConQuanLy" Type="Int32" />
-          <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_BoPhanNhanVien" FromRole="BoPhanNhanVien" ToRole="NhanVien" />
+          <NavigationProperty Name="NhanViens" Relationship="PerfectAppModel.FK_NhanVien_BoPhanNhanVien1" FromRole="BoPhanNhanVien" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="DonViTinh">
           <Key>
@@ -636,12 +637,12 @@
           <Property Name="ConQuanLy" Type="Int32" />
           <NavigationProperty Name="DonViTinh" Relationship="Self.FK_HangHoa_DonViTinh" FromRole="HangHoa" ToRole="DonViTinh" />
           <NavigationProperty Name="KhoHang" Relationship="Self.FK_HangHoa_KhoHang" FromRole="HangHoa" ToRole="KhoHang" />
-          <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_HangHoa_NhaCungCap" FromRole="HangHoa" ToRole="NhaCungCap" />
           <NavigationProperty Name="NhomHang" Relationship="Self.FK_HangHoa_NhomHang" FromRole="HangHoa" ToRole="NhomHang" />
           <NavigationProperty Name="MaVaches" Relationship="Self.FK_MaVach_HangHoa" FromRole="HangHoa" ToRole="MaVach" />
           <NavigationProperty Name="NhomHang1" Relationship="PerfectAppModel.FK_HangHoa_NhomHang1" FromRole="HangHoa" ToRole="NhomHang" />
           <NavigationProperty Name="PhanLoaiHangHoa" Relationship="PerfectAppModel.FK_HangHoa_PhanLoaiHangHoa" FromRole="HangHoa" ToRole="PhanLoaiHangHoa" />
           <NavigationProperty Name="ChiTietPhieuNhapHangs" Relationship="PerfectAppModel.FK_ChiTietPhieuNhapHang_HangHoa" FromRole="HangHoa" ToRole="ChiTietPhieuNhapHang" />
+          <NavigationProperty Name="NhaCungCap" Relationship="PerfectAppModel.FK_HangHoa_NhaCungCap1" FromRole="HangHoa" ToRole="NhaCungCap" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -684,8 +685,8 @@
           <Property Name="DienGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ConQuanLy" Type="Int32" />
           <NavigationProperty Name="HangHoas" Relationship="Self.FK_HangHoa_KhoHang" FromRole="KhoHang" ToRole="HangHoa" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK_KhoHang_NhanVien" FromRole="KhoHang" ToRole="NhanVien" />
           <NavigationProperty Name="PhieuNhapHangs" Relationship="PerfectAppModel.FK_PhieuNhapHang_KhoHang" FromRole="KhoHang" ToRole="PhieuNhapHang" />
+          <NavigationProperty Name="NhanVien" Relationship="PerfectAppModel.FK_KhoHang_NhanVien1" FromRole="KhoHang" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="KhuVuc">
           <Key>
@@ -695,7 +696,8 @@
           <Property Name="TenKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_KhuVuc" FromRole="KhuVuc" ToRole="KhachHang" />
-          <NavigationProperty Name="NhaCungCaps" Relationship="Self.FK_NhaCungCap_KhuVuc" FromRole="KhuVuc" ToRole="NhaCungCap" />
+          <Property Name="ConQuanLy" Type="Int32" />
+          <NavigationProperty Name="NhaCungCaps" Relationship="PerfectAppModel.FK_NhaCungCap_KhuVuc1" FromRole="KhuVuc" ToRole="NhaCungCap" />
         </EntityType>
         <EntityType Name="MaVach">
           <Key>
@@ -709,52 +711,6 @@
           <Property Name="MaDV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DonViTinh" Relationship="Self.FK_MaVach_DonViTinh" FromRole="MaVach" ToRole="DonViTinh" />
           <NavigationProperty Name="HangHoa" Relationship="Self.FK_MaVach_HangHoa" FromRole="MaVach" ToRole="HangHoa" />
-        </EntityType>
-        <EntityType Name="NhaCungCap">
-          <Key>
-            <PropertyRef Name="MaNCC" />
-          </Key>
-          <Property Name="MaNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaSoThue" Type="Int32" />
-          <Property Name="DienThoai" Type="Int32" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GioiHanNo" Type="Int32" />
-          <Property Name="ChietKhau" Type="Int32" />
-          <Property Name="Fax" Type="Int32" />
-          <Property Name="Mobile" Type="Int32" />
-          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NoHienTai" Type="Int32" />
-          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NguoiLienHe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ConQuanLy" Type="Int32" />
-          <NavigationProperty Name="HangHoas" Relationship="Self.FK_HangHoa_NhaCungCap" FromRole="NhaCungCap" ToRole="HangHoa" />
-          <NavigationProperty Name="KhuVuc" Relationship="Self.FK_NhaCungCap_KhuVuc" FromRole="NhaCungCap" ToRole="KhuVuc" />
-          <NavigationProperty Name="PhieuNhapHangs" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap" FromRole="NhaCungCap" ToRole="PhieuNhapHang" />
-        </EntityType>
-        <EntityType Name="NhanVien">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ConQuanLy" Type="Int32" />
-          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DienThoai" Type="Int32" />
-          <Property Name="DiDong" Type="Int32" />
-          <Property Name="MaBP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MaNVQL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="BoPhanNhanVien" Relationship="Self.FK_NhanVien_BoPhanNhanVien" FromRole="NhanVien" ToRole="BoPhanNhanVien" />
-          <NavigationProperty Name="KhoHangs" Relationship="Self.FK_KhoHang_NhanVien" FromRole="NhanVien" ToRole="KhoHang" />
-          <NavigationProperty Name="NhanVien1" Relationship="PerfectAppModel.FK_NhanVien_NhanVien" FromRole="NhanVien" ToRole="NhanVien1" />
-          <NavigationProperty Name="NhanVien2" Relationship="PerfectAppModel.FK_NhanVien_NhanVien" FromRole="NhanVien1" ToRole="NhanVien" />
-          <NavigationProperty Name="PhieuNhapHangs" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhanVien" FromRole="NhanVien" ToRole="PhieuNhapHang" />
         </EntityType>
         <EntityType Name="NhomHang">
           <Key>
@@ -792,18 +748,6 @@
           <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <Association Name="FK_NhanVien_BoPhanNhanVien">
-          <End Role="BoPhanNhanVien" Type="Self.BoPhanNhanVien" Multiplicity="0..1" />
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BoPhanNhanVien">
-              <PropertyRef Name="MaBP" />
-            </Principal>
-            <Dependent Role="NhanVien">
-              <PropertyRef Name="MaBP" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_HangHoa_DonViTinh">
           <End Role="DonViTinh" Type="Self.DonViTinh" Multiplicity="0..1" />
           <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="*" />
@@ -837,18 +781,6 @@
             </Principal>
             <Dependent Role="HangHoa">
               <PropertyRef Name="MaKho" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HangHoa_NhaCungCap">
-          <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
-          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhaCungCap">
-              <PropertyRef Name="MaNCC" />
-            </Principal>
-            <Dependent Role="HangHoa">
-              <PropertyRef Name="MaNCC" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -888,30 +820,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KhoHang_NhanVien">
-          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
-          <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhanVien">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="KhoHang">
-              <PropertyRef Name="NguoiQuanLy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NhaCungCap_KhuVuc">
-          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
-          <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhuVuc">
-              <PropertyRef Name="MaKhuVuc" />
-            </Principal>
-            <Dependent Role="NhaCungCap">
-              <PropertyRef Name="MaKhuVuc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="PerfectAppEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BoPhanNhanViens" EntityType="Self.BoPhanNhanVien" />
           <EntitySet Name="DonViTinhs" EntityType="Self.DonViTinh" />
@@ -920,16 +828,10 @@
           <EntitySet Name="KhoHangs" EntityType="Self.KhoHang" />
           <EntitySet Name="KhuVucs" EntityType="Self.KhuVuc" />
           <EntitySet Name="MaVaches" EntityType="Self.MaVach" />
-          <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
-          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="NhomHangs" EntityType="Self.NhomHang" />
           <EntitySet Name="TyGias" EntityType="Self.TyGia" />
           <EntitySet Name="UserIDs" EntityType="Self.UserID" />
           <EntitySet Name="VaiTroes" EntityType="Self.VaiTro" />
-          <AssociationSet Name="FK_NhanVien_BoPhanNhanVien" Association="Self.FK_NhanVien_BoPhanNhanVien">
-            <End Role="BoPhanNhanVien" EntitySet="BoPhanNhanViens" />
-            <End Role="NhanVien" EntitySet="NhanViens" />
-          </AssociationSet>
           <AssociationSet Name="FK_HangHoa_DonViTinh" Association="Self.FK_HangHoa_DonViTinh">
             <End Role="DonViTinh" EntitySet="DonViTinhs" />
             <End Role="HangHoa" EntitySet="HangHoas" />
@@ -940,10 +842,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_HangHoa_KhoHang" Association="Self.FK_HangHoa_KhoHang">
             <End Role="KhoHang" EntitySet="KhoHangs" />
-            <End Role="HangHoa" EntitySet="HangHoas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HangHoa_NhaCungCap" Association="Self.FK_HangHoa_NhaCungCap">
-            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
             <End Role="HangHoa" EntitySet="HangHoas" />
           </AssociationSet>
           <AssociationSet Name="FK_HangHoa_NhomHang" Association="Self.FK_HangHoa_NhomHang">
@@ -958,19 +856,10 @@
             <End Role="KhuVuc" EntitySet="KhuVucs" />
             <End Role="KhachHang" EntitySet="KhachHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK_KhoHang_NhanVien" Association="Self.FK_KhoHang_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="KhoHang" EntitySet="KhoHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NhaCungCap_KhuVuc" Association="Self.FK_NhaCungCap_KhuVuc">
-            <End Role="KhuVuc" EntitySet="KhuVucs" />
-            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
-          </AssociationSet>
           <EntitySet Name="DieuKhoanThanhToans" EntityType="PerfectAppModel.DieuKhoanThanhToan" />
           <EntitySet Name="HinhThucThanhToans" EntityType="PerfectAppModel.HinhThucThanhToan" />
           <EntitySet Name="PhanLoaiHangHoas" EntityType="PerfectAppModel.PhanLoaiHangHoa" />
           <EntitySet Name="PhieuNhapHangs" EntityType="PerfectAppModel.PhieuNhapHang" />
-          <EntitySet Name="PhieuTemps" EntityType="PerfectAppModel.PhieuTemp" />
           <EntitySet Name="sysdiagrams" EntityType="PerfectAppModel.sysdiagram" />
           <AssociationSet Name="FK_PhieuNhapHang_DieuKhoanThanhToan" Association="PerfectAppModel.FK_PhieuNhapHang_DieuKhoanThanhToan">
             <End Role="DieuKhoanThanhToan" EntitySet="DieuKhoanThanhToans" />
@@ -990,18 +879,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_PhieuNhapHang_KhoHang" Association="PerfectAppModel.FK_PhieuNhapHang_KhoHang">
             <End Role="KhoHang" EntitySet="KhoHangs" />
-            <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhieuNhapHang_NhaCungCap" Association="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap">
-            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
-            <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NhanVien_NhanVien" Association="PerfectAppModel.FK_NhanVien_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
-            <End Role="NhanVien1" EntitySet="NhanViens" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhieuNhapHang_NhanVien" Association="PerfectAppModel.FK_PhieuNhapHang_NhanVien">
-            <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
@@ -1042,6 +919,37 @@
           <AssociationSet Name="FK_ChiTietPhieuNhapHang_PhieuNhapHang" Association="PerfectAppModel.FK_ChiTietPhieuNhapHang_PhieuNhapHang">
             <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
             <End Role="ChiTietPhieuNhapHang" EntitySet="ChiTietPhieuNhapHangs" />
+          </AssociationSet>
+          <EntitySet Name="PhieuTemps" EntityType="PerfectAppModel.PhieuTemp" />
+          <EntitySet Name="NhaCungCaps" EntityType="PerfectAppModel.NhaCungCap" />
+          <AssociationSet Name="FK_HangHoa_NhaCungCap1" Association="PerfectAppModel.FK_HangHoa_NhaCungCap1">
+            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+            <End Role="HangHoa" EntitySet="HangHoas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhaCungCap_KhuVuc1" Association="PerfectAppModel.FK_NhaCungCap_KhuVuc1">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhieuNhapHang_NhaCungCap" Association="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap">
+            <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+            <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
+          </AssociationSet>
+          <EntitySet Name="NhanViens" EntityType="PerfectAppModel.NhanVien" />
+          <AssociationSet Name="FK_NhanVien_BoPhanNhanVien1" Association="PerfectAppModel.FK_NhanVien_BoPhanNhanVien1">
+            <End Role="BoPhanNhanVien" EntitySet="BoPhanNhanViens" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhoHang_NhanVien1" Association="PerfectAppModel.FK_KhoHang_NhanVien1">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="KhoHang" EntitySet="KhoHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_NhanVien" Association="PerfectAppModel.FK_NhanVien_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="NhanVien1" EntitySet="NhanViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhieuNhapHang_NhanVien" Association="PerfectAppModel.FK_PhieuNhapHang_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="DieuKhoanThanhToan">
@@ -1088,21 +996,9 @@
           <NavigationProperty Name="DieuKhoanThanhToan" Relationship="PerfectAppModel.FK_PhieuNhapHang_DieuKhoanThanhToan" FromRole="PhieuNhapHang" ToRole="DieuKhoanThanhToan" />
           <NavigationProperty Name="HinhThucThanhToan" Relationship="PerfectAppModel.FK_PhieuNhapHang_HinhThucThanhToan" FromRole="PhieuNhapHang" ToRole="HinhThucThanhToan" />
           <NavigationProperty Name="KhoHang" Relationship="PerfectAppModel.FK_PhieuNhapHang_KhoHang" FromRole="PhieuNhapHang" ToRole="KhoHang" />
+          <NavigationProperty Name="ChiTietPhieuNhapHangs" Relationship="PerfectAppModel.FK_ChiTietPhieuNhapHang_PhieuNhapHang" FromRole="PhieuNhapHang" ToRole="ChiTietPhieuNhapHang" />
           <NavigationProperty Name="NhaCungCap" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap" FromRole="PhieuNhapHang" ToRole="NhaCungCap" />
           <NavigationProperty Name="NhanVien" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhanVien" FromRole="PhieuNhapHang" ToRole="NhanVien" />
-          <NavigationProperty Name="ChiTietPhieuNhapHangs" Relationship="PerfectAppModel.FK_ChiTietPhieuNhapHang_PhieuNhapHang" FromRole="PhieuNhapHang" ToRole="ChiTietPhieuNhapHang" />
-        </EntityType>
-        <EntityType Name="PhieuTemp">
-          <Key>
-            <PropertyRef Name="MaPhieu" />
-          </Key>
-          <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaHang" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaDonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SoLuong" Type="Int32" />
-          <Property Name="DonGia" Type="Double" />
-          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1174,42 +1070,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PhieuNhapHang_NhaCungCap">
-          <End Type="PerfectAppModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
-          <End Type="PerfectAppModel.PhieuNhapHang" Role="PhieuNhapHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhaCungCap">
-              <PropertyRef Name="MaNCC" />
-            </Principal>
-            <Dependent Role="PhieuNhapHang">
-              <PropertyRef Name="MaNCC" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NhanVien_NhanVien">
-          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
-          <End Type="PerfectAppModel.NhanVien" Role="NhanVien1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhanVien">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="NhanVien1">
-              <PropertyRef Name="MaNVQL" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PhieuNhapHang_NhanVien">
-          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
-          <End Type="PerfectAppModel.PhieuNhapHang" Role="PhieuNhapHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NhanVien">
-              <PropertyRef Name="MaNV" />
-            </Principal>
-            <Dependent Role="PhieuNhapHang">
-              <PropertyRef Name="MaNV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -1256,6 +1116,148 @@
             </Principal>
             <Dependent Role="ChiTietPhieuNhapHang">
               <PropertyRef Name="MaPhieu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PhieuTemp">
+          <Key>
+            <PropertyRef Name="MaPhieu" />
+          </Key>
+          <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaHang" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="DonGia" Type="Double" />
+          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NhaCungCap">
+          <Key>
+            <PropertyRef Name="MaNCC" />
+          </Key>
+          <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaSoThue" Type="Int32" />
+          <Property Name="DienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiHanNo" Type="Int32" />
+          <Property Name="ChietKhau" Type="Int32" />
+          <Property Name="Fax" Type="Int32" />
+          <Property Name="Mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoHienTai" Type="Int32" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiLienHe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ConQuanLy" Type="Int32" />
+          <NavigationProperty Name="HangHoas" Relationship="PerfectAppModel.FK_HangHoa_NhaCungCap1" FromRole="NhaCungCap" ToRole="HangHoa" />
+          <NavigationProperty Name="KhuVuc" Relationship="PerfectAppModel.FK_NhaCungCap_KhuVuc1" FromRole="NhaCungCap" ToRole="KhuVuc" />
+          <NavigationProperty Name="PhieuNhapHangs" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap" FromRole="NhaCungCap" ToRole="PhieuNhapHang" />
+        </EntityType>
+        <Association Name="FK_HangHoa_NhaCungCap1">
+          <End Type="PerfectAppModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.HangHoa" Role="HangHoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaCungCap">
+              <PropertyRef Name="MaNCC" />
+            </Principal>
+            <Dependent Role="HangHoa">
+              <PropertyRef Name="MaNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhaCungCap_KhuVuc1">
+          <End Type="PerfectAppModel.KhuVuc" Role="KhuVuc" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.NhaCungCap" Role="NhaCungCap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="NhaCungCap">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhieuNhapHang_NhaCungCap">
+          <End Type="PerfectAppModel.NhaCungCap" Role="NhaCungCap" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.PhieuNhapHang" Role="PhieuNhapHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhaCungCap">
+              <PropertyRef Name="MaNCC" />
+            </Principal>
+            <Dependent Role="PhieuNhapHang">
+              <PropertyRef Name="MaNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaBP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaNVQL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="DiDong" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ConQuanLy" Type="Int32" />
+          <NavigationProperty Name="BoPhanNhanVien" Relationship="PerfectAppModel.FK_NhanVien_BoPhanNhanVien1" FromRole="NhanVien" ToRole="BoPhanNhanVien" />
+          <NavigationProperty Name="KhoHangs" Relationship="PerfectAppModel.FK_KhoHang_NhanVien1" FromRole="NhanVien" ToRole="KhoHang" />
+          <NavigationProperty Name="NhanVien1" Relationship="PerfectAppModel.FK_NhanVien_NhanVien" FromRole="NhanVien" ToRole="NhanVien1" />
+          <NavigationProperty Name="NhanVien2" Relationship="PerfectAppModel.FK_NhanVien_NhanVien" FromRole="NhanVien1" ToRole="NhanVien" />
+          <NavigationProperty Name="PhieuNhapHangs" Relationship="PerfectAppModel.FK_PhieuNhapHang_NhanVien" FromRole="NhanVien" ToRole="PhieuNhapHang" />
+        </EntityType>
+        <Association Name="FK_NhanVien_BoPhanNhanVien1">
+          <End Type="PerfectAppModel.BoPhanNhanVien" Role="BoPhanNhanVien" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoPhanNhanVien">
+              <PropertyRef Name="MaBP" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaBP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhoHang_NhanVien1">
+          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.KhoHang" Role="KhoHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="KhoHang">
+              <PropertyRef Name="NguoiQuanLy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_NhanVien">
+          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.NhanVien" Role="NhanVien1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="NhanVien1">
+              <PropertyRef Name="MaNVQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhieuNhapHang_NhanVien">
+          <End Type="PerfectAppModel.NhanVien" Role="NhanVien" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.PhieuNhapHang" Role="PhieuNhapHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="PhieuNhapHang">
+              <PropertyRef Name="MaNV" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1352,6 +1354,7 @@
           <EntitySetMapping Name="KhuVucs">
             <EntityTypeMapping TypeName="PerfectAppModel.KhuVuc">
               <MappingFragment StoreEntitySet="KhuVuc">
+                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
                 <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
                 <ScalarProperty Name="TenKhuVuc" ColumnName="TenKhuVuc" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
@@ -1367,46 +1370,6 @@
                 <ScalarProperty Name="Giaban" ColumnName="Giaban" />
                 <ScalarProperty Name="MaVach1" ColumnName="MaVach" />
                 <ScalarProperty Name="MaDV" ColumnName="MaDV" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NhaCungCaps">
-            <EntityTypeMapping TypeName="PerfectAppModel.NhaCungCap">
-              <MappingFragment StoreEntitySet="NhaCungCap">
-                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
-                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
-                <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
-                <ScalarProperty Name="GioiHanNo" ColumnName="GioiHanNo" />
-                <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
-                <ScalarProperty Name="NoHienTai" ColumnName="NoHienTai" />
-                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-                <ScalarProperty Name="NguoiLienHe" ColumnName="NguoiLienHe" />
-                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="PerfectAppModel.NhanVien">
-              <MappingFragment StoreEntitySet="NhanVien">
-                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-                <ScalarProperty Name="Ten" ColumnName="Ten" />
-                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
-                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="DiDong" ColumnName="DiDong" />
-                <ScalarProperty Name="MaBP" ColumnName="MaBP" />
-                <ScalarProperty Name="MaNVQL" ColumnName="MaNVQL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1491,19 +1454,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PhieuTemps">
-            <EntityTypeMapping TypeName="PerfectAppModel.PhieuTemp">
-              <MappingFragment StoreEntitySet="PhieuTemp">
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
-                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
-                <ScalarProperty Name="MaHang" ColumnName="MaHang" />
-                <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="PerfectAppModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1549,6 +1499,59 @@
                 <ScalarProperty Name="MaHang" ColumnName="MaHang" />
                 <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
                 <ScalarProperty Name="MaChiTiet" ColumnName="MaChiTiet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhieuTemps">
+            <EntityTypeMapping TypeName="PerfectAppModel.PhieuTemp">
+              <MappingFragment StoreEntitySet="PhieuTemp">
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+                <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+                <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhaCungCaps">
+            <EntityTypeMapping TypeName="PerfectAppModel.NhaCungCap">
+              <MappingFragment StoreEntitySet="NhaCungCap">
+                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
+                <ScalarProperty Name="NguoiLienHe" ColumnName="NguoiLienHe" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="NoHienTai" ColumnName="NoHienTai" />
+                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
+                <ScalarProperty Name="GioiHanNo" ColumnName="GioiHanNo" />
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanViens">
+            <EntityTypeMapping TypeName="PerfectAppModel.NhanVien">
+              <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
+                <ScalarProperty Name="DiDong" ColumnName="DiDong" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="MaNVQL" ColumnName="MaNVQL" />
+                <ScalarProperty Name="MaBP" ColumnName="MaBP" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

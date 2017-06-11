@@ -35,8 +35,8 @@ namespace DoAn_LTQLUD
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HangHoa> HangHoas { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuNhapHang> PhieuNhapHangs { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

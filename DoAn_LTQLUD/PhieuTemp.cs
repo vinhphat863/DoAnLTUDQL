@@ -17,7 +17,7 @@ namespace DoAn_LTQLUD
         public int MaPhieu { get; set; }
         public string MaHang { get; set; }
         public string TenHang { get; set; }
-        public string MaDonVi { get; set; }
+        public string TenDonVi { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<double> DonGia { get; set; }
         public string GhiChu { get; set; }

@@ -40,7 +40,6 @@ namespace DoAn_LTQLUD
     
         public virtual DonViTinh DonViTinh { get; set; }
         public virtual KhoHang KhoHang { get; set; }
-        public virtual NhaCungCap NhaCungCap { get; set; }
         public virtual NhomHang NhomHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaVach> MaVaches { get; set; }
@@ -48,5 +47,6 @@ namespace DoAn_LTQLUD
         public virtual PhanLoaiHangHoa PhanLoaiHangHoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietPhieuNhapHang> ChiTietPhieuNhapHangs { get; set; }
+        public virtual NhaCungCap NhaCungCap { get; set; }
     }
 }

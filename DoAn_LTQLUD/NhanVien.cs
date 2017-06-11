@@ -23,15 +23,15 @@ namespace DoAn_LTQLUD
         }
     
         public string MaNV { get; set; }
+        public string MaBP { get; set; }
+        public string MaNVQL { get; set; }
         public string Ten { get; set; }
-        public Nullable<int> ConQuanLy { get; set; }
         public string ChucVu { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
-        public Nullable<int> DienThoai { get; set; }
-        public Nullable<int> DiDong { get; set; }
-        public string MaBP { get; set; }
-        public string MaNVQL { get; set; }
+        public string DienThoai { get; set; }
+        public string DiDong { get; set; }
+        public Nullable<int> ConQuanLy { get; set; }
     
         public virtual BoPhanNhanVien BoPhanNhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -24,6 +24,7 @@ namespace DoAn_LTQLUD
         public string MaKhuVuc { get; set; }
         public string TenKhuVuc { get; set; }
         public string GhiChu { get; set; }
+        public Nullable<int> ConQuanLy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KhachHang> KhachHangs { get; set; }

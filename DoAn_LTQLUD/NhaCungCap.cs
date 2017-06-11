@@ -26,13 +26,13 @@ namespace DoAn_LTQLUD
         public string TenNCC { get; set; }
         public string DiaChi { get; set; }
         public Nullable<int> MaSoThue { get; set; }
-        public Nullable<int> DienThoai { get; set; }
+        public string DienThoai { get; set; }
         public string Email { get; set; }
         public string TaiKhoan { get; set; }
         public Nullable<int> GioiHanNo { get; set; }
         public Nullable<int> ChietKhau { get; set; }
         public Nullable<int> Fax { get; set; }
-        public Nullable<int> Mobile { get; set; }
+        public string Mobile { get; set; }
         public string Website { get; set; }
         public string NganHang { get; set; }
         public Nullable<int> NoHienTai { get; set; }

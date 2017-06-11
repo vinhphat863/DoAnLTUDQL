@@ -37,9 +37,9 @@ namespace DoAn_LTQLUD
         public virtual DieuKhoanThanhToan DieuKhoanThanhToan { get; set; }
         public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
         public virtual KhoHang KhoHang { get; set; }
-        public virtual NhaCungCap NhaCungCap { get; set; }
-        public virtual NhanVien NhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietPhieuNhapHang> ChiTietPhieuNhapHangs { get; set; }
+        public virtual NhaCungCap NhaCungCap { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

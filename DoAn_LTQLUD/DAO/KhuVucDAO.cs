@@ -16,8 +16,6 @@ namespace DoAn_LTQLUD.DAO
         public static string MaKhuVuc()
         {
             string Ma;
-            int SoMoi = 0;
-            string temp;
             var db = new PerfectAppEntities();
             Ma = db.KhuVucs.OrderByDescending(k => k.MaKhuVuc).FirstOrDefault().MaKhuVuc;
             if (Ma != null)

@@ -34,8 +34,6 @@ namespace DoAn_LTQLUD
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<KhuVuc> KhuVucs { get; set; }
         public virtual DbSet<MaVach> MaVaches { get; set; }
-        public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
-        public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<NhomHang> NhomHangs { get; set; }
         public virtual DbSet<TyGia> TyGias { get; set; }
         public virtual DbSet<UserID> UserIDs { get; set; }
@@ -44,9 +42,11 @@ namespace DoAn_LTQLUD
         public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
         public virtual DbSet<PhanLoaiHangHoa> PhanLoaiHangHoas { get; set; }
         public virtual DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
-        public virtual DbSet<PhieuTemp> PhieuTemps { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ChiTietPhieuNhapHang> ChiTietPhieuNhapHangs { get; set; }
+        public virtual DbSet<PhieuTemp> PhieuTemps { get; set; }
+        public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
+        public virtual DbSet<NhanVien> NhanViens { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
