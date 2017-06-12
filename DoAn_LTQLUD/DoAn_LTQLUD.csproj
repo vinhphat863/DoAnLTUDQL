@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DoAn_LTQLUD</RootNamespace>
     <AssemblyName>DoAn_LTQLUD</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -71,41 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoPhanNhanVien.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BUS\ChiTietPhieuNhapHangBUS.cs" />
-    <Compile Include="BUS\DieuKhoanTTBUS.cs" />
-    <Compile Include="BUS\DonViBUS.cs" />
-    <Compile Include="BUS\HangHoaBUS.cs" />
-    <Compile Include="BUS\HinhThucTTBUS.cs" />
-    <Compile Include="BUS\KhoBUS.cs" />
-    <Compile Include="BUS\KhuVucBUS.cs" />
-    <Compile Include="BUS\NhaCungCapBUS.cs" />
-    <Compile Include="BUS\NhanVienBUS.cs" />
-    <Compile Include="BUS\PhieuNhapHangBUS.cs" />
-    <Compile Include="BUS\UserBUS.cs" />
-    <Compile Include="ChiTietPhieuNhapHang.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\ChiTietPhieuNhapHangDAO.cs" />
-    <Compile Include="DAO\DieuKhoanTTDAO.cs" />
-    <Compile Include="DAO\DonViDAO.cs" />
-    <Compile Include="DAO\HangDAO.cs" />
-    <Compile Include="DAO\HinhThucTTDAO.cs" />
-    <Compile Include="DAO\KhoDAO.cs" />
-    <Compile Include="DAO\KhuVucDAO.cs" />
-    <Compile Include="DAO\NhaCungCapDAO.cs" />
-    <Compile Include="DAO\NhanVienDAO.cs" />
-    <Compile Include="DAO\PhieuNhapHangDAO.cs" />
-    <Compile Include="DAO\UserDAO.cs" />
-    <Compile Include="DAO\XuLyChuoi.cs" />
-    <Compile Include="DieuKhoanThanhToan.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DonViTinh.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="formKhuVuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,21 +205,6 @@
     <Compile Include="frmTyGia.Designer.cs">
       <DependentUpon>frmTyGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="HangHoa.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HinhThucThanhToan.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhachHang.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhoHang.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhuVuc.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,62 +212,8 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="MainViewModel.cs" />
-    <Compile Include="MaVach.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhaCungCap.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhanVien.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhomHang.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PerfectAppModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PerfectAppModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PerfectAppModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PerfectAppModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="PhanLoaiHangHoa.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PhieuNhapHang.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PhieuTemp.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TyGia.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserID.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VaiTro.cs">
-      <DependentUpon>PerfectAppModel.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="formKhuVuc.resx">
       <DependentUpon>formKhuVuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,16 +292,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="PerfectAppModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PerfectAppModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="PerfectAppModel.edmx.diagram">
-      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -415,21 +309,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PerfectAppModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
-      <LastGenOutput>PerfectAppModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="PerfectAppModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PerfectAppModel.edmx</DependentUpon>
-      <LastGenOutput>PerfectAppModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{d9b0feec-fb53-4e4f-9ab6-88ff6eee6350}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{860aa3d1-8a91-458c-a8cc-fd0f7284f34c}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

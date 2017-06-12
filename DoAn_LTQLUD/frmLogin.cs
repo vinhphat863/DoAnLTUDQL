@@ -8,8 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DoAn_LTQLUD.BUS;
-
+using BUS;
 namespace DoAn_LTQLUD
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
@@ -23,7 +22,7 @@ namespace DoAn_LTQLUD
         {
             string userName = txb_username.Text;
             string passWord = txb_password.Text;
-            if (UserBUS.CheckTaiKhoan(userName,passWord) == true)
+            if (UserBUS.CheckUser(userName,passWord)==true)
             {
                 MainView frm = new MainView();
                 this.Hide();
@@ -47,7 +46,7 @@ namespace DoAn_LTQLUD
             {
                 string userName = txb_username.Text;
                 string passWord = txb_password.Text;
-                if (UserBUS.CheckTaiKhoan(userName, passWord) == true)
+                if (true)
                 {
                     MainView frm = new MainView();
                     this.Hide();

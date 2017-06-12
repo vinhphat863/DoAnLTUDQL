@@ -8,8 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DoAn_LTQLUD.BUS;
-
+using BUS;
 namespace DoAn_LTQLUD
 {
     public partial class frmThemKhuVuccs : DevExpress.XtraEditors.XtraForm
@@ -26,10 +25,20 @@ namespace DoAn_LTQLUD
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            KhuVucBUS.Them(txtMaKhuVuc.Text, txtTen.Text, txtGhiChu.Text);
+            bool ConQuanLy;
+            if(checkBox1.Checked == true)
+            {
+                ConQuanLy = true;
+            }
+            else
+            {
+                ConQuanLy = false;
+            }
+            KhuVucBUS.Them(txtMaKhuVuc.Text, txtTen.Text, txtGhiChu.Text,ConQuanLy);
             txtMaKhuVuc.Text = KhuVucBUS.MaKhuVuc();
             txtTen.Text = null;
             txtGhiChu.Text = null;
+            checkBox1.Checked = true;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
