@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuNhapHangDAO.cs" />
+    <Compile Include="KhachHangDAO.cs" />
     <Compile Include="DieuKhoanThanhToanDAO.cs" />
     <Compile Include="HangHoaDAO.cs" />
     <Compile Include="HinhThucThanhToanDAO.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="KhuVucDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="PhieuNhapHangDAO.cs" />
+    <Compile Include="PhieuTempDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAO.cs" />
     <Compile Include="XuLyChuoi.cs" />

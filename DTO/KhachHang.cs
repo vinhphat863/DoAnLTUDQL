@@ -19,18 +19,12 @@ namespace DTO
         public string TenKH { get; set; }
         public string DiaChi { get; set; }
         public string MaSoThue { get; set; }
-        public Nullable<int> DienThoai { get; set; }
+        public string DienThoai { get; set; }
         public string Email { get; set; }
         public string TaiKhoan { get; set; }
         public Nullable<int> GioiHanNo { get; set; }
-        public Nullable<int> ChietKhau { get; set; }
-        public Nullable<int> Fax { get; set; }
-        public Nullable<int> Mobile { get; set; }
-        public string Website { get; set; }
         public string NganHang { get; set; }
         public Nullable<int> NoHienTai { get; set; }
-        public string NickYahoo { get; set; }
-        public string NickSkype { get; set; }
         public string NguoiLienHe { get; set; }
         public Nullable<bool> ConQuanLy { get; set; }
     

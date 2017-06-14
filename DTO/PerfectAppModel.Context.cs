@@ -33,7 +33,6 @@ namespace DTO
         public virtual DbSet<DonViTinh> DonViTinhs { get; set; }
         public virtual DbSet<HangHoa> HangHoas { get; set; }
         public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<KhuVuc> KhuVucs { get; set; }
         public virtual DbSet<MaVach> MaVaches { get; set; }
@@ -43,10 +42,10 @@ namespace DTO
         public virtual DbSet<PhanLoaiHangHoa> PhanLoaiHangHoas { get; set; }
         public virtual DbSet<PhieuNhapHang> PhieuNhapHangs { get; set; }
         public virtual DbSet<PhieuTemp> PhieuTemps { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TyGia> TyGias { get; set; }
         public virtual DbSet<UserID> UserIDs { get; set; }
         public virtual DbSet<VaiTro> VaiTroes { get; set; }
+        public virtual DbSet<KhachHang> KhachHangs { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

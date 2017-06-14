@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PerfectAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PerfectAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BoPhanNhanVien">
           <Key>
             <PropertyRef Name="MaBP" />
@@ -81,18 +81,12 @@
           <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="MaSoThue" Type="varchar" MaxLength="50" />
-          <Property Name="DienThoai" Type="int" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="11" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" />
           <Property Name="GioiHanNo" Type="int" />
-          <Property Name="ChietKhau" Type="int" />
-          <Property Name="Fax" Type="int" />
-          <Property Name="Mobile" Type="int" />
-          <Property Name="Website" Type="varchar" MaxLength="50" />
           <Property Name="NganHang" Type="nvarchar" MaxLength="50" />
           <Property Name="NoHienTai" Type="int" />
-          <Property Name="NickYahoo" Type="varchar" MaxLength="50" />
-          <Property Name="NickSkype" Type="varchar" MaxLength="50" />
           <Property Name="NguoiLienHe" Type="nvarchar" MaxLength="50" />
           <Property Name="ConQuanLy" Type="bit" />
         </EntityType>
@@ -216,16 +210,6 @@
           <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="float" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TyGia">
           <Key>
@@ -517,7 +501,6 @@
           <EntitySet Name="PhanLoaiHangHoa" EntityType="Self.PhanLoaiHangHoa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuNhapHang" EntityType="Self.PhieuNhapHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuTemp" EntityType="Self.PhieuTemp" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TyGia" EntityType="Self.TyGia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserID" EntityType="Self.UserID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VaiTro" EntityType="Self.VaiTro" Schema="dbo" store:Type="Tables" />
@@ -594,8 +577,7 @@
             <End Role="PhieuNhapHang" EntitySet="PhieuNhapHang" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PerfectAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -679,31 +661,6 @@
           <Property Name="ConQuanLy" Type="Boolean" />
           <NavigationProperty Name="PhieuNhapHangs" Relationship="Self.FK_PhieuNhapHang_HinhThucThanhToan" FromRole="HinhThucThanhToan" ToRole="PhieuNhapHang" />
         </EntityType>
-        <EntityType Name="KhachHang">
-          <Key>
-            <PropertyRef Name="MaKH" />
-          </Key>
-          <Property Name="MaKH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaSoThue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DienThoai" Type="Int32" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GioiHanNo" Type="Int32" />
-          <Property Name="ChietKhau" Type="Int32" />
-          <Property Name="Fax" Type="Int32" />
-          <Property Name="Mobile" Type="Int32" />
-          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NoHienTai" Type="Int32" />
-          <Property Name="NickYahoo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NickSkype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NguoiLienHe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ConQuanLy" Type="Boolean" />
-          <NavigationProperty Name="KhuVuc" Relationship="Self.FK_KhachHang_KhuVuc1" FromRole="KhachHang" ToRole="KhuVuc" />
-        </EntityType>
         <EntityType Name="KhoHang">
           <Key>
             <PropertyRef Name="MaKho" />
@@ -731,8 +688,8 @@
           <Property Name="TenKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ConQuanLy" Type="Boolean" />
-          <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_KhuVuc1" FromRole="KhuVuc" ToRole="KhachHang" />
           <NavigationProperty Name="NhaCungCaps" Relationship="Self.FK_NhaCungCap_KhuVuc1" FromRole="KhuVuc" ToRole="NhaCungCap" />
+          <NavigationProperty Name="KhachHangs" Relationship="PerfectAppModel.FK_KhachHang_KhuVuc1" FromRole="KhuVuc" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="MaVach">
           <Key>
@@ -846,16 +803,6 @@
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Double" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TyGia">
           <Key>
@@ -1015,18 +962,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_KhachHang_KhuVuc1">
-          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhuVuc">
-              <PropertyRef Name="MaKhuVuc" />
-            </Principal>
-            <Dependent Role="KhachHang">
-              <PropertyRef Name="MaKhuVuc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_KhoHang_NhanVien1">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
           <End Role="KhoHang" Type="Self.KhoHang" Multiplicity="*" />
@@ -1106,7 +1041,6 @@
           <EntitySet Name="DonViTinhs" EntityType="Self.DonViTinh" />
           <EntitySet Name="HangHoas" EntityType="Self.HangHoa" />
           <EntitySet Name="HinhThucThanhToans" EntityType="Self.HinhThucThanhToan" />
-          <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="KhoHangs" EntityType="Self.KhoHang" />
           <EntitySet Name="KhuVucs" EntityType="Self.KhuVuc" />
           <EntitySet Name="MaVaches" EntityType="Self.MaVach" />
@@ -1116,7 +1050,6 @@
           <EntitySet Name="PhanLoaiHangHoas" EntityType="Self.PhanLoaiHangHoa" />
           <EntitySet Name="PhieuNhapHangs" EntityType="Self.PhieuNhapHang" />
           <EntitySet Name="PhieuTemps" EntityType="Self.PhieuTemp" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TyGias" EntityType="Self.TyGia" />
           <EntitySet Name="UserIDs" EntityType="Self.UserID" />
           <EntitySet Name="VaiTroes" EntityType="Self.VaiTro" />
@@ -1163,10 +1096,6 @@
           <AssociationSet Name="FK_PhieuNhapHang_HinhThucThanhToan" Association="Self.FK_PhieuNhapHang_HinhThucThanhToan">
             <End Role="HinhThucThanhToan" EntitySet="HinhThucThanhToans" />
             <End Role="PhieuNhapHang" EntitySet="PhieuNhapHangs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_KhachHang_KhuVuc1" Association="Self.FK_KhachHang_KhuVuc1">
-            <End Role="KhuVuc" EntitySet="KhuVucs" />
-            <End Role="KhachHang" EntitySet="KhachHangs" />
           </AssociationSet>
           <AssociationSet Name="FK_KhoHang_NhanVien1" Association="Self.FK_KhoHang_NhanVien1">
             <End Role="NhanVien" EntitySet="NhanViens" />
@@ -1222,6 +1151,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="KhachHangs" EntityType="PerfectAppModel.KhachHang" />
+          <AssociationSet Name="FK_KhachHang_KhuVuc1" Association="PerfectAppModel.FK_KhachHang_KhuVuc1">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1234,6 +1168,37 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaSoThue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiHanNo" Type="Int32" />
+          <Property Name="NganHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoHienTai" Type="Int32" />
+          <Property Name="NguoiLienHe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ConQuanLy" Type="Boolean" />
+          <NavigationProperty Name="KhuVuc" Relationship="PerfectAppModel.FK_KhachHang_KhuVuc1" FromRole="KhachHang" ToRole="KhuVuc" />
+        </EntityType>
+        <Association Name="FK_KhachHang_KhuVuc1">
+          <End Type="PerfectAppModel.KhuVuc" Role="KhuVuc" Multiplicity="0..1" />
+          <End Type="PerfectAppModel.KhachHang" Role="KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1309,31 +1274,6 @@
               <MappingFragment StoreEntitySet="HinhThucThanhToan">
                 <ScalarProperty Name="MaHTTT" ColumnName="MaHTTT" />
                 <ScalarProperty Name="TenHTTT" ColumnName="TenHTTT" />
-                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="PerfectAppModel.KhachHang">
-              <MappingFragment StoreEntitySet="KhachHang">
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
-                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
-                <ScalarProperty Name="GioiHanNo" ColumnName="GioiHanNo" />
-                <ScalarProperty Name="ChietKhau" ColumnName="ChietKhau" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
-                <ScalarProperty Name="NoHienTai" ColumnName="NoHienTai" />
-                <ScalarProperty Name="NickYahoo" ColumnName="NickYahoo" />
-                <ScalarProperty Name="NickSkype" ColumnName="NickSkype" />
-                <ScalarProperty Name="NguoiLienHe" ColumnName="NguoiLienHe" />
                 <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1468,17 +1408,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="PerfectAppModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TyGias">
             <EntityTypeMapping TypeName="PerfectAppModel.TyGia">
               <MappingFragment StoreEntitySet="TyGia">
@@ -1532,6 +1461,25 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PerfectAppModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PerfectAppModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="PerfectAppModel.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="ConQuanLy" ColumnName="ConQuanLy" />
+                <ScalarProperty Name="NguoiLienHe" ColumnName="NguoiLienHe" />
+                <ScalarProperty Name="NoHienTai" ColumnName="NoHienTai" />
+                <ScalarProperty Name="NganHang" ColumnName="NganHang" />
+                <ScalarProperty Name="GioiHanNo" ColumnName="GioiHanNo" />
+                <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

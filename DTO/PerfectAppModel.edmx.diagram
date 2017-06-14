@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="PerfectAppModel.DonViTinh" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.HangHoa" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.HinhThucThanhToan" Width="1.5" PointX="6" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PerfectAppModel.KhachHang" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.KhoHang" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.KhuVuc" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.MaVach" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
@@ -21,7 +20,6 @@
         <EntityTypeShape EntityType="PerfectAppModel.PhanLoaiHangHoa" Width="1.5" PointX="3" PointY="28" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.PhieuNhapHang" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.PhieuTemp" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PerfectAppModel.sysdiagram" Width="1.5" PointX="8.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.TyGia" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.UserID" Width="1.5" PointX="10.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="PerfectAppModel.VaiTro" Width="1.5" PointX="8.75" PointY="8" IsExpanded="true" />
@@ -36,13 +34,14 @@
         <AssociationConnector Association="PerfectAppModel.FK_HangHoa_NhomHang1" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_HangHoa_PhanLoaiHangHoa" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_HinhThucThanhToan" ManuallyRouted="false" />
-        <AssociationConnector Association="PerfectAppModel.FK_KhachHang_KhuVuc1" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_KhoHang_NhanVien1" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_KhoHang" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_NhaCungCap_KhuVuc1" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_NhaCungCap" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_NhanVien_NhanVien" ManuallyRouted="false" />
         <AssociationConnector Association="PerfectAppModel.FK_PhieuNhapHang_NhanVien" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PerfectAppModel.KhachHang" Width="1.5" PointX="3" PointY="5.125" />
+        <AssociationConnector Association="PerfectAppModel.FK_KhachHang_KhuVuc1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

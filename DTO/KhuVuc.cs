@@ -17,8 +17,8 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KhuVuc()
         {
-            this.KhachHangs = new HashSet<KhachHang>();
             this.NhaCungCaps = new HashSet<NhaCungCap>();
+            this.KhachHangs = new HashSet<KhachHang>();
         }
     
         public string MaKhuVuc { get; set; }
@@ -27,8 +27,8 @@ namespace DTO
         public Nullable<bool> ConQuanLy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachHang> KhachHangs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NhaCungCap> NhaCungCaps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KhachHang> KhachHangs { get; set; }
     }
 }

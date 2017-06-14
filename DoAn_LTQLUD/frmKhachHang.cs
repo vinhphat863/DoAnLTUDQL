@@ -8,7 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using DTO;
+using BUS;
 namespace DoAn_LTQLUD
 {
     public partial class frmKhachHang : DevExpress.XtraEditors.XtraForm
@@ -16,6 +17,7 @@ namespace DoAn_LTQLUD
         public frmKhachHang()
         {
             InitializeComponent();
+            gridControl1.DataSource = KhachHangBUS.DanhSach();
         }
     }
 }
