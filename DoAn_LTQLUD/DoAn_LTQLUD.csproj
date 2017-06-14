@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v16.2" />
     <Reference Include="DevExpress.Data.v16.2" />
     <Reference Include="DevExpress.Images.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
@@ -59,10 +60,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -175,11 +180,23 @@
     <Compile Include="frmSoDuDauKy.Designer.cs">
       <DependentUpon>frmSoDuDauKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaKhachHang.Designer.cs">
+      <DependentUpon>frmSuaKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSuaKhuVuc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSuaKhuVuc.Designer.cs">
       <DependentUpon>frmSuaKhuVuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemKhachHang.Designer.cs">
+      <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemKhuVuccs.cs">
       <SubType>Form</SubType>
@@ -265,8 +282,14 @@
     <EmbeddedResource Include="frmSoDuDauKy.resx">
       <DependentUpon>frmSoDuDauKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaKhachHang.resx">
+      <DependentUpon>frmSuaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSuaKhuVuc.resx">
       <DependentUpon>frmSuaKhuVuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemKhachHang.resx">
+      <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemKhuVuccs.resx">
       <DependentUpon>frmThemKhuVuccs.cs</DependentUpon>

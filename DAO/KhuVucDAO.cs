@@ -32,6 +32,10 @@ namespace DAO
             {
                 Ma = XuLyChuoi.LayChuoi(Ma);
             }
+            else
+            {
+                Ma = "KV0001";
+            }
             return Ma;
         }
         public static void Them(string Ma, string Ten, string GhiChu,bool ConQuanLy)
