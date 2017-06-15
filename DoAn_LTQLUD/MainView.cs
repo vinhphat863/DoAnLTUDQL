@@ -261,5 +261,17 @@ namespace DoAn_LTQLUD
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmSaoLuu frm = new frmSaoLuu();
+            frm.Show();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPhucHoi frm = new frmPhucHoi();
+            frm.Show();
+        }
     }
 }

@@ -15,10 +15,10 @@ namespace DTO
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class PerfectAppEntities : DbContext
+    public partial class PerfectAppEntities1 : DbContext
     {
-        public PerfectAppEntities()
-            : base("name=PerfectAppEntities")
+        public PerfectAppEntities1()
+            : base("name=PerfectAppEntities1")
         {
         }
     

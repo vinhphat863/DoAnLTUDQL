@@ -174,6 +174,18 @@
     <Compile Include="frmNhomHang.Designer.cs">
       <DependentUpon>frmNhomHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhucHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhucHoi.Designer.cs">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaoLuu.Designer.cs">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSoDuDauKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhomHang.resx">
       <DependentUpon>frmNhomHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhucHoi.resx">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaoLuu.resx">
+      <DependentUpon>frmSaoLuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSoDuDauKy.resx">
       <DependentUpon>frmSoDuDauKy.cs</DependentUpon>

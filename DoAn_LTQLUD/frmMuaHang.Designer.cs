@@ -71,6 +71,7 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CalEditSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CaleditDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -157,7 +158,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -656,6 +656,14 @@
             this.CaleditDonGia.Name = "CaleditDonGia";
             this.CaleditDonGia.Visible = true;
             this.CaleditDonGia.VisibleIndex = 4;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "Ghi Chú";
+            this.gridColumn32.FieldName = "GhiChu";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 6;
             // 
             // gridColumn27
             // 
@@ -1463,14 +1471,6 @@
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(1128, 10);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridColumn32
-            // 
-            this.gridColumn32.Caption = "Ghi Chú";
-            this.gridColumn32.FieldName = "GhiChu";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 6;
             // 
             // frmMuaHang
             // 
