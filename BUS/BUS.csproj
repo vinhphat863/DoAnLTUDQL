@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuNhapHangBUS.cs" />
+    <Compile Include="DonViBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="DieuKhoanThanhToanBUS.cs" />
     <Compile Include="HangHoaBUS.cs" />
@@ -50,6 +51,8 @@
     <Compile Include="NhaCungCapBUS.cs" />
     <Compile Include="KhuVucBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
+    <Compile Include="NhomHangBUS.cs" />
+    <Compile Include="PhanLoaiHangHoaBUS.cs" />
     <Compile Include="PhieuNhapHangBUS.cs" />
     <Compile Include="PhieuTempBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
